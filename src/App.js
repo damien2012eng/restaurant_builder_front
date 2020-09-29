@@ -1,25 +1,39 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import FeatureEditSection from "./builder/FeatureEditSection.jsx"
+
+const FakeData = {
+  headSection:{
+
+  },
+  featureSection: [
+    {
+      title: 'Free Wifi',
+      iconUrl: '',
+    }
+  ],
+  menuSection:{
+
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="restaurant_page landing">
+        <div className='text-center mb-3'>
+          <button className={'btn btn-primary'}>Edit Head Section</button>
+        </div>
+        <hr/>
+
+        <FeatureEditSection data={FakeData.featureSection}/>
+        <hr/>
+
+        <div className='text-center mb-3'>
+          <button className={'btn btn-primary'}>Edit Menu Section</button>
+        </div>
+      </div>
+
   );
 }
 
