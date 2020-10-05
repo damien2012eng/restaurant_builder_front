@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {isEmpty} from '../helper/isEmpty'
+import {IsEmpty} from '../helper/IsEmpty'
 import CustomizedInput from '../helper/CustomizedInput'
 import {Link, withRouter} from "react-router-dom";
 
@@ -24,7 +24,7 @@ class Register extends Component {
         console.log(this.props);
         event.preventDefault();
         const errors = this.validate(this.state.formValue);
-        if(isEmpty(errors)){
+        if(IsEmpty(errors)){
             this.setState({
                 submitting: true,
                 serverFeedback:"",
@@ -38,7 +38,7 @@ class Register extends Component {
                     }
                 }).then(response=>response.json()).then(response => {
                     if(response.result){
-                        console.alert("Congratulations");
+                        alert("Congratulations");
                         this.setState({
                             serverFeedback:response.result.message,
                             submitting: false,

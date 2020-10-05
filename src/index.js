@@ -5,10 +5,57 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Landing from './landing/Landing'
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Register from "./auth/Register";
+import Login from "./auth/Login";
+import Profile from "./auth/Profile"
+import FeatureEditSection from "./builder/FeatureEditSection";
+import List from "./builder/List";
+import FeatureAdd from "./builder/FeatureAdd";
+
 ReactDOM.render(
   <React.StrictMode>
-    {/*<App />*/}
-    <Landing/>
+      <Router>
+
+
+          <Switch>
+              <Route path="/register" >
+                  <Register/>
+              </Route>
+
+              <Route path="/login" >
+                  <Login/>
+              </Route>
+
+              <Route path="/profile/:id" >
+                  <Profile/>
+              </Route>
+
+              <Route path="/landings">
+                  <Landing/>
+              </Route>
+
+              <Route path="/editfeatures/:id">
+                  <FeatureEditSection/>
+              </Route>
+
+              <Route path="/featurelist">
+                  <List/>
+              </Route>
+
+              <Route path="/addfeatures">
+                  <FeatureAdd/>
+              </Route>
+
+          </Switch>
+
+      </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

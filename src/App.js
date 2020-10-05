@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import FeatureEditSection from "./builder/FeatureEditSection.jsx"
+import {Link, withRouter} from "react-router-dom";
 
 const FakeData = {
   headSection:{
@@ -37,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

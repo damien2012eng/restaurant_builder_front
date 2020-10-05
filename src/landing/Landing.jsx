@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import FeatureSection from "./FeatureSection";
+import {Link, withRouter} from "react-router-dom";
 
 const FakeData = {
     head:{
@@ -55,4 +56,4 @@ class Landing extends Component {
     }
 }
 
-export default Landing;
+export default withRouter(Landing);

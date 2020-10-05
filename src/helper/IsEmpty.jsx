@@ -1,3 +1,3 @@
-export function isEmpty(obj){
+export function IsEmpty(obj){
     return Object.keys(obj).length === 0;
 }
